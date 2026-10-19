@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Startup window only; Compose content obtains all colors from MiuixTheme. -->
+    <color name="page_background">#F7F7F7</color>
+    <color name="accent">#3482FF</color>
+</resources>

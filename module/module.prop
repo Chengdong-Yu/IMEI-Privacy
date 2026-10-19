@@ -1,0 +1,6 @@
+id=imei_privacy
+name=IMEI Privacy Shield
+version=1.4.7
+versionCode=13
+author=dsh
+description=查找设备自动适配、自检及失败断网保护（需 root+LSPosed，完整安装后重启）

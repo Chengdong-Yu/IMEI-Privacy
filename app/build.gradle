@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
+
+tasks.withType(Test).configureEach {
+    if (project.hasProperty('compatibilityApks')) {
+        systemProperty 'privacy.compat.apks', project.property('compatibilityApks')
+    }
+}
+
+android {
+    namespace 'com.richard.imeiprivacy'
+    buildFeatures { compose = true }
+    compileSdk {
+        version = release(37) { minorApiLevel = 2 }
+    }
+
+    defaultConfig {
+        applicationId 'com.richard.imeiprivacy'
+        minSdk 33
+        targetSdk 35
+        versionCode 13
+        versionName '1.4.7'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(System.getProperty('user.home') + '/.android/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.activity:activity-compose:1.13.0'
+    implementation 'top.yukonga.miuix.kmp:miuix-ui-android:0.9.4'
+    implementation 'top.yukonga.miuix.kmp:miuix-preference-android:0.9.4'
+    implementation 'org.smali:dexlib2:2.5.2'
+    compileOnly project(':xposed-stubs')
+    testImplementation project(':xposed-stubs')
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+    testImplementation 'com.google.guava:guava:27.1-android'
+}

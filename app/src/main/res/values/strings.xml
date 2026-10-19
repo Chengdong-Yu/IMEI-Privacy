@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IMEI Privacy</string>
+    <string name="module_description">IMEI / MEID 隐私保护、状态自检与伪装总开关</string>
+</resources>

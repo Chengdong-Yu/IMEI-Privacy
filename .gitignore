@@ -1,0 +1,15 @@
+.gradle/
+build/
+*/build/
+dist/
+local.properties
+*.iml
+.idea/
+
+# Local signing material and environment-specific credentials
+keystore.properties
+*.jks
+*.keystore
+.env
+.env.*
+!.env.example

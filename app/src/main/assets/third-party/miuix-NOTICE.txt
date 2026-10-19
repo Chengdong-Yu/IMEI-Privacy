@@ -1,0 +1,9 @@
+miuix 0.9.4
+Copyright compose-miuix-ui contributors.
+https://github.com/compose-miuix-ui/miuix
+Licensed under the Apache License, Version 2.0.
+The license text is provided in Apache-2.0.txt in this directory.
+
+The app uses the published miuix-ui-android and miuix-preference-android
+artifacts. The locally provided miuix-0.9.4 source and examples were used
+as the API and component-style reference; upstream sources were not modified.
